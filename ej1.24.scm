@@ -25,7 +25,7 @@
   (start-prime-test n (runtime)))
 
 (define (start-prime-test n start-time)
-  (if (prime? n)
+  (if (fast-prime? n 10)
       (report-prime (- (runtime) start-time))))
 
 (define (report-prime elapsed-time)
@@ -34,10 +34,29 @@
 
 (define (search-for-primes start end ctr)
   (cond ((and (< start end) (> ctr 0)) 
-         (cond ((and (not (even? start)) (prime? start))
+         (cond ((and (not (even? start)) (fast-prime? start 10))
                 (timed-prime-test start)
                 (search-for-primes (+ start 2) end (- ctr 1)))
                (else (search-for-primes (+ start 1) end ctr))))))
+
+(define (expmod base exp m)
+  (cond ((= exp 0) 1)
+        ((even? exp)
+         (remainder (square (expmod base (/ exp 2) m))
+                    m))
+        (else
+         (remainder (* base (expmod base (- exp 1) m))
+                    m))))
+
+(define (fermat-test n)
+  (define (try-it a)
+    (= (expmod a n n) a))
+  (try-it (+ 1 (random (- n 1)))))
+
+(define (fast-prime? n times)
+  (cond ((= times 0) true)
+        ((fermat-test n) (fast-prime? n (- times 1)))
+        (else false)))
 
 ;resultados
 (search-for-primes 1000 10000 3)
@@ -45,22 +64,24 @@
 (search-for-primes 100000 1000000 3)
 (search-for-primes 1000000 10000000 3)
 
-;con lo que se obtienen los siguientes resultados:
+; Con lo que se obtienen los siguientes resultados:
 
-; 1009 *** 27
-; 1013 *** 5
-; 1019 *** 5
-; 10007 *** 14
-; 10009 *** 15
-; 10037 *** 14
-; 100003 *** 44
-; 100019 *** 44
-; 100043 *** 45
-; 1000003 *** 140
-; 1000033 *** 140
-; 1000037 *** 140
+; 1009 *** 309
+; 1013 *** 213
+; 1019 *** 221
+; 10007 *** 316
+; 10009 *** 313
+; 10037 *** 280
+; 100003 *** 353
+; 100019 *** 316
+; 100043 *** 308
+; 1000003 *** 330
+; 1000033 *** 333
+; 1000037 *** 338
 
-;lo que demuestra que el algoritmo es de O(sqrt(n))
+; Donde se puede observar que no se cumple lo esperado. 
+; Un valor en la escala del millon deberia tomar aproximadamente el doble del tiempo
+; que toma calcular un valor en la escala de los miles.
 
 
 
