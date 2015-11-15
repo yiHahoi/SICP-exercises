@@ -1,0 +1,11 @@
+Mi intento por completar los ejercicios del libro "Structure and Interpretation of Computer Programs" utilizando el lenguaje de programación Scheme. 
+El libro utiliza la implementación MIT Scheme, por lo que se recomienda usar la IDE DrRacket agregando "#lang planet neil/sicp" al principio del código para correr una implementación similar.
+Aquí subiré los ejercicios que considere como resueltos.
+
+Ejercicios que me he saltado por ahora xd:
+
+1.13
+1.14
+1.19
+1.20
+1.28
