@@ -58,15 +58,23 @@
 ; (define (three f) ((+ one two) f))
 ; (define (four f) ((+ one three) f))
 ; (define (five f) ((+ two three) f))
-; y asi sucesivamente ... para esto, se puede notar que es posible
-; realizar composicion de funciones del tipo (f (g x)) ya que se
-; tienen procedimientos que reciben y devuelven procedimientos. 
+; para esto se puede modificar el procedimiento add-1
+; (define (add-1 n) (lambda (f) (lambda (x) (f ((n f) x)))))
+; dejandolo como:
 
-(define (+ f g) (lambda (x) (f (g x))))
+(define (+ m n) (lambda (f) (lambda (x) ((m f) ((n f) x)))))
 
-; ------------------------ extra ------------------------
+; ------------------------ test ------------------------
 
 (define (three f) ((+ one two) f))
 (define (four f) ((+ one three) f))
 (define (five f) ((+ two three) f))
+
+(define (mul n) (* n 3))
+
+((one mul) 2)
+((two mul) 2)
+((three mul) 2)
+((four mul) 2)
+((five mul) 2)
 
