@@ -1,7 +1,7 @@
 Mi intento por completar los ejercicios del libro "Structure and Interpretation of Computer Programs" (SICP).
 Utilizo DrRacket como IDE e incluyo "#lang planet neil/sicp" al inicio de cada ejercicio para utilizar una implementación de Scheme similar a MIT Scheme.
  
-Ejercicios que me he saltado por ahora xd:
+Ejercicios incompletos(*) o que me he saltado por ahora xd:
 
 
 ----------------
@@ -20,5 +20,6 @@ CAP 1
 
 CAP 2
 
+	2.09 (*)
 
 ----------------
