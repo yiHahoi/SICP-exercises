@@ -89,7 +89,7 @@
 ; -----------------------------------------------------
 
 ; Como se puede apreciar, al representar las estructuras mediante
-; capaz de abstraccion, utilizando constructores y selectores,
+; capas de abstraccion, utilizando constructores y selectores,
 ; al realizarse una modificación en los constructores de mobile y branch
 ; solo fue necesario redefinir los procedimientos de los selectores.
 ; (el cambio fue minimo).
