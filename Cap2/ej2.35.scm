@@ -31,11 +31,5 @@
 
 ; ---------------------------------------------------------------
 
-(define (count-leaves tree)
-  (accumulate (lambda (x y) 
-                ()) 
-              0 
-              (map (lambda (x) 
-                     ()) tree)))
 
 
