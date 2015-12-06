@@ -12,9 +12,21 @@
 ; ------------------------- funciones -------------------------
 
 ; count-leaves en funcion de accumulate
-; funciona pero no es para nada elegante, ya que map recibe un procedimiento identidad xd
-; por lo que me imagino que existe una forma mas sensual de resolver este problema xD
+; map reemplaza elementos del arbol por 1's. 
+; si hay subarboles, se les aplica count-leaves de forma recursiva.
 (define (count-leaves tree)
+  (accumulate +
+              0
+              (map (lambda (x) 
+                     (cond ((not (pair? x)) 1)
+                           (else (count-leaves x)))) 
+                   tree)))
+
+
+; otra forma de implementar count-leaves en funcion de accumulate
+; funciona pero no es para nada elegante, ya que map recibe un procedimiento identidad xd
+; por lo que no se aprovecha su uso.
+(define (count-leaves2 tree)
   (accumulate (lambda (x y) 
                 (cond ((not (pair? x)) (+ 1 y))
                       (else (+ (count-leaves x) y)))) 
@@ -27,6 +39,8 @@
 (display tree)
 (newline)
 (count-leaves tree)
+(count-leaves2 tree)
 (newline)
 
 ; ---------------------------------------------------------------
+
