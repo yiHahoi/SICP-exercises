@@ -20,26 +20,30 @@
               (cdr rest))))
   (iter initial sequence))
 
+; -------------------------------------------------------------
+
+; reverse en funcion de fold-right
+(define (reverse sequence)
+  (fold-right (lambda (x y) 
+                (append y (list x))) 
+              nil
+              sequence))
+
+; reverse en funcion de fold-left
+(define (reverse2 sequence)
+  (fold-left (lambda (x y)
+               (cons y x)) 
+             nil
+             sequence))
+
 ; ---------------------------- tests ----------------------------
 
-(display (fold-right / 1 (list 1 2 3)))
+(define sec1 (list 1 2 3 4))
+
+(display (reverse sec1))
 (newline)
-(display (fold-left / 1 (list 1 2 3)))
-(newline)
-(display (fold-right list nil (list 1 2 3)))
-(newline)
-(display (fold-left list nil (list 1 2 3)))
-(newline)
-(display (fold-right + 0 (list 1 2 3)))
-(newline)
-(display (fold-left + 0 (list 1 2 3)))
+(display (reverse2 sec1))
 (newline)
 
 ; ---------------------------------------------------------------
 
-; el operador debe cumplir con la propiedad conmutativa, 
-; es decir, que el orden con el que se aplique el operador a 
-; los elementos de la secuencia no debe afectar al resultado final.
-; por ejemplo los operadores de suma y multiplicación darán los mismos
-; resultados para fold-left y fold-right. Mientras que los operadores
-; de resta y división entregarán resultados diferentes.
