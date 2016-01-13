@@ -1,36 +1,38 @@
 #lang planet neil/sicp
 
 
-#||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+; -------------------------------- INFO --------------------------------
 
-Evalua en x el polinomio descrito por la lista de parametros p
-donde el polinomio de la forma p = p[0]*x^n + p[1]*x^(n-1) + ... + p[n-1]*x + p[n]
-se encuentra representado como la lista p = (p[0] p[1] ... p[n-1] p[n])
 
-Solo por diversión (xd!) ...
-Se evalúa el polinomio de forma recursiva en función de rectas. Por ejemplo: 
+;  Evalua en x el polinomio descrito por la lista de parametros p
+;  donde el polinomio de la forma p = p[0]*x^n + p[1]*x^(n-1) + ... + p[n-1]*x + p[n]
+;  se encuentra representado como la lista p = (p[0] p[1] ... p[n-1] p[n])
+;
+;  Solo por diversión (xd!) ...
+;  Se evalúa el polinomio de forma recursiva en función de rectas. Por ejemplo: 
+;
+;  el polinomio:
+;
+;  y = a*x^3 + b*x^2 + c*x + d 
+;
+;  es equivalente al polinomio:
+;
+;  z = (((a*x + b)*x + c)*x + d)
+;
+;  donde la recta: 
+;
+;  u = (a*x + b) 
+;
+;  corresponde a la pendiente de la recta:
+;
+;  v = (u*x + c)
+;
+;  la que corresponde a la pendiente de la recta:
+;
+;  z = (v*x + d)
 
-el polinomio:
 
-y = a*x^3 + b*x^2 + c*x + d 
-
-es equivalente al polinomio:
-
-z = (((a*x + b)*x + c)*x + d)
-
-donde la recta: 
-
-u = (a*x + b) 
-
-corresponde a la pendiente de la recta:
-
-v = (u*x + c)
-
-la que corresponde a la pendiente de la recta:
-
-z = (v*x + d)
-
-||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||#
+; -------------------------------- POLY --------------------------------
 
 
 (define (eval-poly p x)
@@ -50,7 +52,7 @@ z = (v*x + d)
 
 
 
-; -------------------------------- test --------------------------------
+; -------------------------------- TEST --------------------------------
 
 
 (define poly1 (list 2.0 0.0 1.5))
@@ -60,5 +62,7 @@ z = (v*x + d)
 (newline)
 (display (eval-poly poly2 2.00)) ; = 23.0000
 
+
+; ----------------------------------------------------------------------
 
 
