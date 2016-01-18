@@ -34,22 +34,20 @@
 
 ; -------------------------------- POLY --------------------------------
 
+; evalua en x la recta definida como y=m*x+k
+(define (eval-line m k x)
+  (+ (* m x) k))
 
-(define (eval-poly p x)
-  
-  ; evalua en x la recta definida como y=a*x+b
-  (define (eval-line a b)
-    (+ (* a x) b))
-  ; evalua en x el polinomio descrito por p en forma iterativa
-  (define (eval-poly-iter p acc)
-    (cond ((null? p) acc)
-          ((null? (cdr p)) (eval-line acc (car p)))
-          (else (eval-poly-iter (cdr p) (eval-line acc (car p))))))
-
+; evalua en x el polinomio descrito por param en forma iterativa
+(define (eval-poly param x)
+  ; iterador
+  (define (eval-poly-iter acc param)
+    (cond ((null? param) acc)
+          (else (eval-poly-iter (eval-line acc (car param) x) 
+                                (cdr param)))))
   ; invoca a eval-poly-iter
-  (cond ((null? p) (error "p => '()"))
-        (else (eval-poly-iter (cdr p) (car p)))))
-
+  (cond ((null? param) (error "lista param debe poseer al menos un parametro"))
+        (else (eval-poly-iter 0 param))))
 
 
 ; -------------------------------- TEST --------------------------------
@@ -57,10 +55,13 @@
 
 (define poly1 (list 2.0 0.0 1.5))
 (define poly2 (list 2.0 1.0 1.0 1.0))
+(define poly3 (list 5.0 5.0 5.0 5.0 5.0 5.0 5.0 5.0))
 
 (display (eval-poly poly1 3.14)) ; = 21.2192
 (newline)
 (display (eval-poly poly2 2.00)) ; = 23.0000
+(newline)
+(display (eval-poly poly3 5.00)) ; = 488280.0
 
 
 ; ----------------------------------------------------------------------
