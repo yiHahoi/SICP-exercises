@@ -1,5 +1,6 @@
 #lang planet neil/sicp
 
+; ----------------------------------------------------------
 
 ; acumulador
 (define (make-accumulator acc)
@@ -8,7 +9,8 @@
     acc)
   add)
 
-; tests
+; ----------------------- test -----------------------------
+
 (define x (make-accumulator 10))
 (display (x 10))
 (newline)
@@ -17,3 +19,5 @@
 (display (x 15))
 (newline)
 (display (x 50))
+
+; ----------------------------------------------------------
