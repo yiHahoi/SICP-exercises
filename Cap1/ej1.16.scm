@@ -21,7 +21,7 @@
 
 
 ;test
-(fast-exp 3 99)
-(fast-exp-iter 3 99)
+(fast-exp 3 20)
+(fast-exp-iter 3 20)
 (fast-exp 7 13)
 (fast-exp-iter 7 13)
