@@ -1,4 +1,4 @@
-#lang planet neil/sicp
+#lang sicp
 
 ;improve
 (define (improve guess x)
