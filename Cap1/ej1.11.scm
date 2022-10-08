@@ -1,4 +1,4 @@
-#lang planet neil/sicp
+#lang sicp
 
 ;funcion f por recursion
 (define (f-rec n)

@@ -1,4 +1,4 @@
-#lang planet neil/sicp
+#lang sicp
 
 (define (A x y)
   (cond ((= y 0) 0)

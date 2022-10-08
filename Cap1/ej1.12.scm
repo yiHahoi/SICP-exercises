@@ -1,4 +1,4 @@
-#lang planet neil/sicp
+#lang sicp
 
 ;; Triangulo de Pascal
 (define (pascal row col)
