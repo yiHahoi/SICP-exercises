@@ -1,4 +1,4 @@
-#lang planet neil/sicp
+#lang sicp
 
 ; constante de tolerancia
 (define tolerance 0.00001)

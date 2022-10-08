@@ -1,4 +1,4 @@
-#lang planet neil/sicp
+#lang sicp
 
 ; Fermat's Little Theorem: If n is a prime number and a is any positive integer less than n,
 ; then a raised to the nth power is congruent to a modulo n.

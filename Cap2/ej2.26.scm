@@ -1,4 +1,4 @@
-#lang planet neil/sicp
+#lang sicp
 
 
 (define x (list 1 2 3))

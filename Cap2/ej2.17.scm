@@ -1,4 +1,4 @@
-#lang planet neil/sicp
+#lang sicp
 
 ; devuelve el ultimo par de una lista
 (define (last-pair list)

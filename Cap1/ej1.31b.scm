@@ -1,4 +1,4 @@
-#lang planet neil/sicp
+#lang sicp
 
 ;calcula si n es un numero par
 (define (even? n)

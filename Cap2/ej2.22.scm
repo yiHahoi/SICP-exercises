@@ -1,4 +1,4 @@
-#lang planet neil/sicp
+#lang sicp
 
 
 ;; metodo 1

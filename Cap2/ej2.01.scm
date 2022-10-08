@@ -1,4 +1,4 @@
-#lang planet neil/sicp
+#lang sicp
 
 ; constructor
 (define (make-rat n d) 

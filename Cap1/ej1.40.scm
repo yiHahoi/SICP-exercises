@@ -1,4 +1,4 @@
-#lang planet neil/sicp
+#lang sicp
 
 ; tolerancia de error
 (define tolerance 0.00001)

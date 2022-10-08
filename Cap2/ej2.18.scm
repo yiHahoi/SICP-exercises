@@ -1,4 +1,4 @@
-#lang planet neil/sicp
+#lang sicp
 
 ; devuelve una lista invertida
 (define (reverse lst)

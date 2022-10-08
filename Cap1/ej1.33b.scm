@@ -1,4 +1,4 @@
-#lang planet neil/sicp
+#lang sicp
 
 ; calcula el cuadrado de x
 (define (square x) (* x x))

@@ -1,4 +1,4 @@
-#lang planet neil/sicp
+#lang sicp
 
 ; for-each
 (define (for-each proc lst)

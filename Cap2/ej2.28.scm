@@ -1,4 +1,4 @@
-#lang planet neil/sicp
+#lang sicp
 
 ; funcion fringe
 (define (fringe lst)

@@ -1,4 +1,4 @@
-#lang planet neil/sicp
+#lang sicp
 
 ; cuadrado de x
 (define (square x) (* x x))

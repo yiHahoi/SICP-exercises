@@ -1,4 +1,4 @@
-#lang planet neil/sicp
+#lang sicp
 
 ; square 1
 (define (square-list items)

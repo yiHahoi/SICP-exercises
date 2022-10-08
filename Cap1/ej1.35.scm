@@ -1,4 +1,4 @@
-#lang planet neil/sicp
+#lang sicp
 
 
 ; la constanti phi corresponde a una de las raices de x = 1 + (1/x).

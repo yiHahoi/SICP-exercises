@@ -1,4 +1,4 @@
-#lang planet neil/sicp
+#lang sicp
 
 ; square
 (define (square x) (* x x))

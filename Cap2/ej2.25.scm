@@ -1,4 +1,4 @@
-#lang planet neil/sicp
+#lang sicp
 
 
 ; que combinaciones de car y cdr devolverian el valor 7 de cada lista:

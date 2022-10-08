@@ -1,4 +1,4 @@
-#lang planet neil/sicp
+#lang sicp
 
 ; funcion continua finita iterativa
 (define (cont-frac n d k)

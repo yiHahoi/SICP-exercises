@@ -1,4 +1,4 @@
-#lang planet neil/sicp
+#lang sicp
 
 ; si se realiza un corrimiento de la secuencia agregando un elemento
 ; al inicio, se puede obtener el valor del denominador revisando si

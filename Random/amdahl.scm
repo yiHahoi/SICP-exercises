@@ -1,4 +1,4 @@
-#lang planet neil/sicp
+#lang sicp
 
 ; AMDAHL
 ; devuelve la aceleracion que se obtiene al paralelizar una fraccion de tiempo de ejecucion.

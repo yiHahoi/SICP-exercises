@@ -1,4 +1,4 @@
-#lang planet neil/sicp
+#lang sicp
 
 ; filtra la secuencia
 (define (filter predicate sequence)

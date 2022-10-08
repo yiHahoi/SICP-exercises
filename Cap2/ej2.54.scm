@@ -1,4 +1,4 @@
-#lang planet neil/sicp
+#lang sicp
 
 ; compara si dos listas de simbolos son iguales
 (define (equal? a b)
